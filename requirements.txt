@@ -1,0 +1,11 @@
+kafka-python
+pyspark
+pandas
+numpy
+scikit-learn
+psycopg2-binary
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
+websockets

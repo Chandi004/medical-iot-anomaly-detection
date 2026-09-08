@@ -1,0 +1,16 @@
+FROM apache/spark:4.2.0
+
+USER root
+
+WORKDIR /app
+
+COPY spark/ ./spark/
+
+RUN pip install psycopg2-binary
+
+WORKDIR /app/spark
+
+CMD ["/opt/spark/bin/spark-submit", \
+     "--packages", \
+     "org.apache.spark:spark-sql-kafka-0-10_2.13:4.2.0", \
+     "streaming_processor.py"]
